@@ -11,6 +11,8 @@ public class PlayerInputManager : MonoBehaviour
     private bool _isMovingLeft = false;
     private bool _isMovingRight = false;
     private bool _isMovingBack = false;
+    private bool _submitPressed = false;
+    private bool _interactPressed = false;
 
     private float _speed = 0.05f;
 
@@ -74,5 +76,42 @@ public class PlayerInputManager : MonoBehaviour
         {
             _isMovingBack = false;
         }
+    }
+    
+    public void InteractButtonPressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _interactPressed = true;
+        }
+        else if (context.canceled)
+        {
+            _interactPressed = false;
+        } 
+    }
+    public void Submit(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _submitPressed = true;
+        }
+        else if (context.canceled)
+        {
+            _submitPressed = false;
+        } 
+    }
+
+    public bool GetSubmitPressed() 
+    {
+        bool result = _submitPressed;
+        _submitPressed = false;
+        return result;
+    }
+    
+    public bool GetInteractPressed() 
+    {
+        bool result = _interactPressed;
+        _interactPressed = false;
+        return result;
     }
 }
