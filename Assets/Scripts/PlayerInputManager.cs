@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputManager : MonoBehaviour
 {
-    [SerializeField] private PlayerInput _player;
     private DialogueManager _manager;
     private bool _isMovingForward = false;
     private bool _isMovingLeft = false;
@@ -17,7 +16,7 @@ public class PlayerInputManager : MonoBehaviour
 
     private float _speed = 0.05f;
 
-    public void Awake()
+    public void Start()
     {
         _manager = DialogueManager.GetInstance();
     }
@@ -123,5 +122,10 @@ public class PlayerInputManager : MonoBehaviour
         bool result = _interactPressed;
         _interactPressed = false;
         return result;
+    }
+    
+    public void RegisterSubmitPressed() 
+    {
+        _submitPressed = false;
     }
 }
