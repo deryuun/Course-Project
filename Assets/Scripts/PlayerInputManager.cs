@@ -16,7 +16,7 @@ public class PlayerInputManager : MonoBehaviour
 
     private float _speed = 0.05f;
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (_isMovingForward)
         {

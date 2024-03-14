@@ -233,6 +233,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138596042}
   m_CullTransparentMesh: 1
+--- !u!1 &171647130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 171647132}
+  - component: {fileID: 171647131}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &171647131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171647130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b781fb45574e3764b93dbfff6f1a9508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 976730453}
+  dialoguePanel: {fileID: 138596042}
+  dialogueText: {fileID: 1014377469}
+--- !u!4 &171647132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171647130}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.157018, y: 1.2886132, z: 1.3622282}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &629526902
 GameObject:
   m_ObjectHideFlags: 3
@@ -568,8 +615,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803c0b5803e34ff1ba83d9796074a907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 976730453}
   visualCue: {fileID: 1573034693}
-  inkJSON: {fileID: 0}
+  inkJSON: {fileID: 4900000, guid: 6909061590ae54847a3ea8db93126c86, type: 3}
 --- !u!135 &783815131
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -905,6 +953,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 3e7f6a61-6b38-4c97-9eee-b7d6eae18523
     m_ActionName: Player/Backward[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 976730458}
+        m_TargetAssemblyTypeName: PlayerInputManager, Assembly-CSharp
+        m_MethodName: Submit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d71b198c-87be-4dad-be3b-0ad998390475
+    m_ActionName: Player/Submit[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 976730458}
+        m_TargetAssemblyTypeName: PlayerInputManager, Assembly-CSharp
+        m_MethodName: InteractButtonPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d1ae6d78-9286-4e02-bf49-c0cc02b98191
+    m_ActionName: Player/Interact[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

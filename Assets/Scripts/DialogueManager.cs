@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogWarning("Bla bla bla");
+            Debug.LogWarning("Error");
         }
         instance = this;
         manager = player.GetComponent<PlayerInputManager>();
@@ -58,6 +58,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         
+        ContinueStory();
     }
     
     private void ExitDialogueMode() 
