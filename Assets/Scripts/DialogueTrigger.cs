@@ -3,7 +3,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-    private PlayerInputManager manager;
+    private PlayerInputManager _inputManager;
     
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
@@ -11,23 +11,26 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
 
+    private DialogueManager _dialogManager;
+
     private bool playerInRange;
 
     private void Awake() 
     {
         playerInRange = false;
         visualCue.SetActive(false);
-        manager = player.GetComponent<PlayerInputManager>();
+        _inputManager = player.GetComponent<PlayerInputManager>();
+        _dialogManager = DialogueManager.GetInstance();
     }
 
     private void Update() 
     {
-        if (playerInRange)
+        if (playerInRange && !_dialogManager.dialogueIsPlaying)
         {
             visualCue.SetActive(true);
-            if (manager.GetInteractPressed())
+            if (_inputManager.GetInteractPressed())
             {
-                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                _dialogManager.EnterDialogueMode(inkJSON);
             }
         }
         else 
