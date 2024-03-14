@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -242,7 +242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 171647132}
-  - component: {fileID: 171647131}
+  - component: {fileID: 171647133}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -250,21 +250,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &171647131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171647130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b781fb45574e3764b93dbfff6f1a9508, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 976730453}
-  dialoguePanel: {fileID: 138596042}
-  dialogueText: {fileID: 1014377469}
 --- !u!4 &171647132
 Transform:
   m_ObjectHideFlags: 0
@@ -280,6 +265,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &171647133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171647130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c990eb07b62bc64e911cda8f189edf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 976730453}
+  dialoguePanel: {fileID: 138596042}
+  dialogueText: {fileID: 1014377469}
 --- !u!1 &629526902
 GameObject:
   m_ObjectHideFlags: 3
@@ -617,7 +617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 976730453}
   visualCue: {fileID: 1573034693}
-  inkJSON: {fileID: 4900000, guid: 6909061590ae54847a3ea8db93126c86, type: 3}
+  inkJSON: {fileID: 4900000, guid: 69a3c530229a87c49adc154a5429be18, type: 3}
 --- !u!135 &783815131
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1068,8 +1068,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

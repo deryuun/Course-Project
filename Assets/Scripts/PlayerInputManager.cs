@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputManager : MonoBehaviour
 {
     [SerializeField] private PlayerInput _player;
+    private DialogueManager _manager;
     private bool _isMovingForward = false;
     private bool _isMovingLeft = false;
     private bool _isMovingRight = false;
@@ -16,8 +17,17 @@ public class PlayerInputManager : MonoBehaviour
 
     private float _speed = 0.05f;
 
+    public void Awake()
+    {
+        _manager = DialogueManager.GetInstance();
+    }
+
     public void FixedUpdate()
     {
+        if (_manager.dialogueIsPlaying)
+        {
+            return;
+        }
         if (_isMovingForward)
         {
             transform.Translate(Vector3.forward * _speed, Space.World);
