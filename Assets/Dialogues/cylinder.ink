@@ -1,7 +1,7 @@
 ﻿-> main
 
 === main ===
-Hello, i am second. What is your name?
+Hello, i am Cylinder. What is your name? #speaker:Cylinder
     + [Capsule]
         -> chosenCapsule
     + [Why are you asking?]
@@ -13,7 +13,8 @@ Nice to meet you! Now we are friends!
     + [Okay. Bye]
 	-> chosen2
 === chosen1 ===
-See you!
+Sorry, I need to go.
+- Okay, I will miss you! #speaker:Capsule
 -> END
 === chosen2 ===
 See you.

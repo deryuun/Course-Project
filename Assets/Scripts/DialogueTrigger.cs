@@ -15,7 +15,6 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("Awake");
         playerInRange = false;
         visualCue.SetActive(false);
         _inputManager = player.GetComponent<PlayerInputManager>();
