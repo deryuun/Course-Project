@@ -11,26 +11,24 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
 
-    private DialogueManager _dialogManager;
-
     private bool playerInRange;
 
-    private void Awake() 
+    private void Awake()
     {
+        Debug.Log("Awake");
         playerInRange = false;
         visualCue.SetActive(false);
         _inputManager = player.GetComponent<PlayerInputManager>();
-        _dialogManager = DialogueManager.GetInstance();
     }
 
     private void Update() 
     {
-        if (playerInRange && !_dialogManager.dialogueIsPlaying)
+        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
             if (_inputManager.GetInteractPressed())
             {
-                _dialogManager.EnterDialogueMode(inkJSON);
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             }
         }
         else 

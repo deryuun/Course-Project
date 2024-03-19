@@ -2,13 +2,19 @@
 
 === main ===
 How do you do?
-    + [bad]
-        -> chosen("bad")
-    + [fine]
-        -> chosen("fine")
-    + [terrible]
-        -> chosen("terrible")
+    + [Bad]
+        -> chosenBad
+    + [Fine]
+        -> chosenFine
+    + [Terrible]
+        -> chosenTerrible
         
-=== chosen(choice) ===
-You chose {choice}!
+=== chosenBad ===
+Omg, sorry :(
+-> END
+=== chosenFine ===
+It's awesome :)
+-> END
+=== chosenTerrible ===
+It's sad ;(
 -> END
