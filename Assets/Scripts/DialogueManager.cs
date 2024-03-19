@@ -4,6 +4,7 @@ using Ink.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextMeshProUGUI speakerNameText;
+    [SerializeField] private Image speakerPortrait;
     
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -79,8 +82,6 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
-        
-        ContinueStory();
     }
     
     private void ContinueStory() 
@@ -89,12 +90,36 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text = currentStory.Continue();
             DisplayChoices();
+            HandleTags(currentStory.currentTags);
         } 
         else
         {
             ExitDialogueMode();
         }
     }
+
+    private void HandleTags(List<string> currentStoryCurrentTags)
+    {
+        foreach (var tag in currentStoryCurrentTags)
+        {
+            string[] splittedTag = tag.Split(':');
+            if (splittedTag.Length != 2)
+            {
+                Debug.LogWarning($"Incorrect tag - {tag}");
+            }
+    
+            string key = splittedTag[0];
+            string value = splittedTag[1];
+                
+            // можно добавить больше тегов в дальнейшем, но пока достаточно этого
+            if (key == "speaker")
+            {
+                speakerNameText.text = value;
+                speakerPortrait.overrideSprite = Resources.Load<Sprite>($"Portraits/{value}/main");
+            }           
+        }
+    }
+
     private void DisplayChoices() 
     {
         List<Choice> currentChoices = currentStory.currentChoices;
